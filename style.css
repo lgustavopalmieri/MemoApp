@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+:root{
+    --bg:#f1f1f1;
+    --color-one:#ff6d00;
+    --color-two:#240046;
+    --color-three:#ff9100;
+    --color-four:#7b2cbf;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;    
+    text-decoration: none;
+}
+
+body{
+    width: 100vw;
+    font-size: 1em;
+     
+}
+.search-text{
+    border: 1px solid var(--color-one);
+    padding: 0.5em;
+    border-radius: 1em;
+    background: none;
+    outline: none;
+    color: var(--bg);
+}
+
+
+.menu{
+    padding: 1.5em;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-two);
+    color: var(--color-three);
+}
+
+nav{
+    display: flex;
+    align-items: center;
+}
+
+.nav-list{
+    display: flex;
+    list-style: none;
+    background: none;
+    
+}
+
+.nav-list li{
+    margin: 0 0.5em;
+    
+}
+
+.nav-list a{
+    color: var(--color-three);
+    transition: 0.2s ease-in;
+}
+
+.nav-list a:hover{
+    color: var(--bg);
+}
+
+
+.menu-mobile{
+    display: none;
+}
+.menu-mobile div{
+    background: var(--color-one);
+    height: 2px;
+    width: 30px;
+    margin-top: 5px;
+    
+}
+
+.addmemo{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1em;
+    display: block;
+}
+
+.addmemo.active{
+    display: none;
+}
+
+.btn-addmemo{
+    font-size: 2em;
+    padding: 0.1em;
+    width: 50px;
+    height: 50px;   
+    border-radius: 25px;    
+    border-style: none;
+    background-color: var(--color-one);
+    color: var(--color-two);
+    cursor: pointer;
+}
+
+
+
+
+.newmemo{
+    display: none;
+    background-color: var(--color-two);
+    padding: 1em;
+    height: 85vh;
+    width: 95vw;
+    margin: 0.5em auto;
+    border-radius: 1em;
+}
+
+.newmemo.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.newmemo textarea{
+    color: whitesmoke;
+    resize: none;
+    width: 100%;
+    height: 85%;
+    background: none;
+    border: none;
+    font-size: 1em;
+}
+
+.save-or-cancel{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.save-or-cancel button{
+    font-size: 1em;
+    padding: 0.1em;
+    width: 100px;
+    height: 50px;   
+    border-radius: 15px;    
+    border-style: none;
+    background-color: var(--color-one);
+    color: var(--color-two);
+    cursor: pointer;
+}
+
+.allmemos{
+    
+    display: flex;
+    background-color: var(--color-four);
+    padding: 1em;
+    height: 85vh;
+    width: 95vw;
+    margin: 0.5em auto;
+    border-radius: 1em;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+.memos{
+    overflow-y: hidden;
+    overflow-x: hidden ;
+    margin: 0.3em;
+    width: 40vw;
+    max-height: 25vh;
+    background-color: var(--color-three);
+    border-radius: 1em;
+    padding: 0.5em;
+    display: flex;
+}
+
+.span-memo{
+    height: 23vh;
+    width: 40vw;
+    display: flex;    
+}
+
+@media(max-width:800px){
+    
+    .menu-mobile{
+        display: block;
+        padding-right: 1.8em;
+        cursor: pointer;
+    }
+    .menu nav{
+        flex-direction: column;
+        
+    }
+
+    .nav-list{
+        left: 0;
+        position: absolute;
+        top: 60px;
+        background: var(--color-two);
+        flex-direction: column;
+        justify-content: space-around;
+        height: 30vh;
+        padding: 0 0.5em;
+        text-align: center;
+        margin-right: 0.3em;
+        border-bottom-left-radius:1em;
+        border-bottom-right-radius:1em;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out
+        
+        
+    }
+
+    .nav-list.active{
+        opacity: 1;       
+        
+    }
+
+    
+}
+
+
