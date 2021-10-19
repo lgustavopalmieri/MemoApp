@@ -18,7 +18,7 @@
 body{
     width: 100vw;
     font-size: 1em;
-     
+    background-color: var(--color-four); 
 }
 .search-text{
     border: 1px solid var(--color-one);
@@ -78,30 +78,29 @@ nav{
     
 }
 
-.addmemo{
-    position: absolute;
+.btn-addmemo{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: fixed;
     bottom: 0;
     right: 0;
-    padding: 1em;
-    display: block;
-}
-
-.addmemo.active{
-    display: none;
-}
-
-.btn-addmemo{
     font-size: 2em;
-    padding: 0.1em;
-    width: 50px;
-    height: 50px;   
+    padding: 1em;
+    width: 40px;
+    height: 40px;   
     border-radius: 25px;    
     border-style: none;
     background-color: var(--color-one);
     color: var(--color-two);
     cursor: pointer;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
 }
 
+.btn-addmemo.inactive{
+    opacity: 0;
+}
 
 
 
@@ -149,19 +148,22 @@ nav{
     cursor: pointer;
 }
 
+
 .allmemos{
     
     display: flex;
     background-color: var(--color-four);
     padding: 1em;
-    height: 85vh;
+    min-height: 85vh;
     width: 95vw;
     margin: 0.5em auto;
-    border-radius: 1em;
-    justify-content: space-around;
-    align-items: flex-start;
+    border-radius: 1em;  
     flex-wrap: wrap;
-    overflow-y: scroll;
+    
+}
+
+.allmemos.active{
+    display: none;
 }
 
 .memos{
@@ -174,13 +176,24 @@ nav{
     border-radius: 1em;
     padding: 0.5em;
     display: flex;
+    flex-wrap: wrap;
+    
 }
 
-.span-memo{
-    height: 23vh;
+.memo{
+    color: whitesmoke;
+    resize: none;
     width: 40vw;
-    display: flex;    
+    height: 25vh;
+    background: none;
+    border: none;
+    font-size: 1em; 
+    display: flex;
+    flex-wrap: wrap;
+    
 }
+
+
 
 @media(max-width:800px){
     

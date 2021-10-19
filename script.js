@@ -1,4 +1,6 @@
-//https://www.youtube.com/watch?v=OR8ySydmqLQ
+var plusButton = document.querySelector('.btn-addmemo')
+var cancelButton = document.querySelector('.btn-cancel')
+var saveButton = document.querySelector('.btn-save')
 
 const menuMobile = document.querySelector('.menu-mobile')
 const navList = document.querySelector('.nav-list')
@@ -7,50 +9,40 @@ menuMobile.addEventListener('click', ()=>{
     navList.classList.toggle('active')
 })
 
-const newMemo = document.querySelector('.btn-addmemo')
-const addMemo = document.querySelector('.newmemo')
-newMemo.addEventListener('click', () =>{
-    addMemo.classList.toggle('active')
-
-    if(addMemo.classList != 'active'){
-        let hideBtn = document.querySelector('.addmemo')
-        hideBtn.classList.toggle('active')        
-    }
-})
-
-const cancelNote = document.querySelector('.btn-cancel')
-cancelNote.addEventListener('click',()=>{
-    addMemo.classList.toggle('active')
-    if(addMemo.classList != 'active'){
-        let hideBtn = document.querySelector('.addmemo')
-        hideBtn.classList.toggle('active')
-    }
-})
+//plusButton.addEventListener('click',openNewNote)
+saveButton.addEventListener('click',saveNote)
+cancelButton.addEventListener('click',cancelMemo)
 
 
+function openNewNote(){
+    document.querySelector('.allmemos').classList.toggle('active')
+    document.querySelector('.newmemo').classList.toggle('active')
+    plusButton.classList.toggle('active')
+}
 
-const allMemos = document.querySelector('.allmemos')
+function cancelMemo(){
+    document.querySelector('.newmemo').classList.toggle('active')
+    plusButton.classList.toggle('active')
+    document.querySelector('.allmemos').classList.toggle('active')
+}
 
-const yourMemo = document.querySelector('#your-memo')
+function saveNote(){
 
-const saveMemo = document.querySelector('.btn-save')
+    var yourMemo = document.querySelector('#your-memo')
 
-saveMemo.addEventListener('click', () =>{
     if(yourMemo.value.length == 0){
         alert("Airhead...")
     }else{
         document.querySelector('.allmemos').innerHTML +=
         `
             <div class="memos">
-                <span id="new-fresh-memo" class="span-memo">
-                    
+                <textarea class="memo">
                     ${document.querySelector('#your-memo').value}
-                      
-                </span>
+                </textarea>
             </div>        
-        `
-
-    }
-})
-
-
+        `; 
+        document.querySelector('.allmemos').classList.toggle('active')
+        document.querySelector('.newmemo').classList.remove('active')
+        document.querySelector('.btn-addmemo').classList.toggle('active')      
+    } 
+}    
