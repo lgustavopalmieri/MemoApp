@@ -170,31 +170,32 @@ nav{
     overflow-y: hidden;
     overflow-x: hidden ;
     margin: 0.3em;
-    width: 40vw;
-    max-height: 25vh;
+    max-width: 40vw;
+    max-height: 35vh;
     background-color: var(--color-three);
     border-radius: 1em;
     padding: 0.5em;
     display: flex;
     flex-wrap: wrap;
-    
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .memo{
     color: whitesmoke;
     resize: none;
     width: 40vw;
-    height: 20vh;
+    height: 15vh;
     background: none;
     border: none;
     font-size: 1em; 
     display: flex;
-    flex-wrap: wrap;
-    
+    flex-wrap: wrap;    
 }
 
 .delete{
-    width: 25%;
+    
     background-color: var(--color-two);
     border-radius: 1em;
     color: var(--bg);
@@ -202,7 +203,8 @@ nav{
     box-shadow: none;
     color: var(--color-one);
     border-style: none;
-    
+    padding: 1em;
+    margin-top: 1em;
 }
 
 
