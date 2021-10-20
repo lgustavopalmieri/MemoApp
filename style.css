@@ -184,12 +184,24 @@ nav{
     color: whitesmoke;
     resize: none;
     width: 40vw;
-    height: 25vh;
+    height: 20vh;
     background: none;
     border: none;
     font-size: 1em; 
     display: flex;
     flex-wrap: wrap;
+    
+}
+
+.delete{
+    width: 25%;
+    background-color: var(--color-two);
+    border-radius: 1em;
+    color: var(--bg);
+    outline: none;
+    box-shadow: none;
+    color: var(--color-one);
+    border-style: none;
     
 }
 

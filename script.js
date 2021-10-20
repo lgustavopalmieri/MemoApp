@@ -14,6 +14,7 @@ saveButton.addEventListener('click',saveNote)
 cancelButton.addEventListener('click',cancelMemo)
 
 
+
 function openNewNote(){
     document.querySelector('.allmemos').classList.toggle('active')
     document.querySelector('.newmemo').classList.toggle('active')
@@ -39,10 +40,31 @@ function saveNote(){
                 <textarea class="memo">
                     ${document.querySelector('#your-memo').value}
                 </textarea>
+                <button class="delete">
+                    delete
+                </button>    
             </div>        
-        `; 
+        `;
+
+        var allMemosToDelete = document.querySelectorAll('.delete')
+        for(let i = 0; i < allMemosToDelete.length;i++){
+            allMemosToDelete[i].onclick=function (){
+                this.parentNode.remove()
+            }
+        }
+       
+
+
+
+        document.querySelector('.your-memo').value = '' 
         document.querySelector('.allmemos').classList.toggle('active')
         document.querySelector('.newmemo').classList.remove('active')
         document.querySelector('.btn-addmemo').classList.toggle('active')      
     } 
 }    
+
+
+
+
+
+
